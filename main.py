@@ -19,7 +19,7 @@ def index():
     return {"Hello": "World"}
 
 
-@app.post("/author")
+@app.post("/author", response_model=SchemaAuthor)
 def create_author(author: SchemaAuthor):
     db_author = ModelAuthor(name=author.name, age=author.age)
     db.session.add(db_author)
@@ -27,7 +27,7 @@ def create_author(author: SchemaAuthor):
     return db_author
 
 
-@app.post("/book")
+@app.post("/book", response_model=SchemaBook)
 def create_book(book: SchemaBook):
     db_book = ModelBook(title=book.title, rating=book.rating,
                         author_id=book.author_id)
