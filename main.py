@@ -17,8 +17,8 @@ def index():
     return {"Hello": "World"}
 
 
-app.include_router(author.router)
-app.include_router(book.router)
+app.include_router(author.router, prefix='/authors')
+app.include_router(book.router, prefix='/books')
 
 
 if __name__ == '__main__':

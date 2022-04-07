@@ -3,7 +3,7 @@ from fastapi_sqlalchemy import db
 from models import Author
 from schemas.Author import Author as SchemaAuthor
 
-router = APIRouter(prefix='/authors')
+router = APIRouter()
 
 
 @router.get("/")

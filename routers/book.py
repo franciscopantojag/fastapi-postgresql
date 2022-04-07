@@ -3,7 +3,7 @@ from fastapi_sqlalchemy import db
 from models import Book
 from schemas.Book import Book as SchemaBook
 
-router = APIRouter(prefix='/books')
+router = APIRouter()
 
 
 @router.get("/")
